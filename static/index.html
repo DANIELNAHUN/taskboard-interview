@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskBoard</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; align-items: center; gap: .5rem; padding: .5rem 0; border-bottom: 1px solid #ddd; }
+    li .title { flex: 1; }
+    li.done .title { text-decoration: line-through; color: #888; }
+    .row { display: flex; gap: .5rem; margin-bottom: 1rem; }
+    .row input[type=text] { flex: 1; }
+    .pager { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>TaskBoard</h1>
+
+  <div class="row">
+    <input id="new-title" type="text" placeholder="Nueva tarea...">
+    <button id="add">Añadir</button>
+  </div>
+
+  <div class="row">
+    <label>Filtro:
+      <select id="filter">
+        <option value="">Todas</option>
+        <option value="todo">Pendientes</option>
+        <option value="done">Hechas</option>
+      </select>
+    </label>
+  </div>
+
+  <ul id="list"></ul>
+
+  <div class="pager">
+    <button id="prev">&larr; Anterior</button>
+    <span id="page-info"></span>
+    <button id="next">Siguiente &rarr;</button>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
